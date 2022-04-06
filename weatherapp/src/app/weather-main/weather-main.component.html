@@ -1,1 +1,18 @@
-<p>weather-main works!</p>
+<div class="container">
+    <div id="divWeatherMain">
+        <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+            <mat-icon class="sun">wb_sunny</mat-icon>
+        </div>
+        <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+            <mat-icon class="moon">nightlight</mat-icon>
+        </div>
+        <div class="weatherWidgetRow">
+            <mat-icon class="cloud cloudDiv">cloud</mat-icon>
+        </div>
+        <div class="weatherWidgetRow" style="font-size: 2rem; margin-top: 5px;">{{WeatherData.temp_celcius}}˚</div>
+        <div class="weatherWidgetRow" style="font-size: 1rem;">{{WeatherData.temp_min}}˚ / {{ WeatherData.temp_max}}˚</div>
+        <div class="weatherWidgetRow" style="font-size: 1rem;">Feels like: {{WeatherData.temp_feels_like}}˚</div>
+        <div class="weatherWidgetRow" style="font-size: 1.5rem;margin-top: 10px;">{{WeatherData.name}}</div>
+        <div class="weatherWidgetRow" style="font-size: 1rem;" >Humidity: {{WeatherData.main.humidity}}%</div>
+    </div>
+</div>
